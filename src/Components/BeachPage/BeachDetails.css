@@ -1,0 +1,8 @@
+.beach-details{
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center;
+    overflow-y: scroll; /* Enable vertical scroll if the content overflows */
+    background-color: #CD734F;
+}

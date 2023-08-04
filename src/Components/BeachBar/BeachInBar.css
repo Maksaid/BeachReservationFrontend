@@ -1,0 +1,28 @@
+.beach-in-bar {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 5px 0;
+    cursor: pointer;
+    background-color: #EADDA3;
+    transition: background-color 0.2s;
+}
+
+.beach-in-bar:hover {
+    background-color: #ebebeb;
+}
+
+.beach-in-bar h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.beach-in-bar p {
+    margin: 5px 0;
+}
+
+/* Optional: Add box-shadow for a subtle elevation effect */
+.beach-in-bar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

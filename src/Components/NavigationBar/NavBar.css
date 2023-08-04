@@ -1,0 +1,42 @@
+.nav-bar {
+    height: 8vh;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    align-items: center;
+    background-color: #353F43;
+}
+
+.log-button {
+    /* Add styles for the login button */
+    height: inherit;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.in {
+    background-color: #4CAF50;
+}
+
+.out{
+    background-color: crimson;
+}
+.in:hover {
+    background-color: #45a049; /* Add a hover effect for the button */
+}
+
+.out:hover{
+    background-color: darkred;
+}
+
+.logo {
+    font-size: 24px;
+}
+
