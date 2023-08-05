@@ -4,9 +4,8 @@ import './NavBar.css'
 
 const LoginButton = ({ onLoginClick , isLoggedIn}) => {
     return (
-        <div className={`log-button ${isLoggedIn ? 'out' : 'in'}`} onClick={onLoginClick}>
-            👤
-            {isLoggedIn? 'LogOut' : 'LogIn'}
+        <div className={`nav-button ${isLoggedIn ? 'out' : 'in'}`} onClick={onLoginClick}>
+            👤{isLoggedIn? 'LogOut' : 'LogIn'}
         </div>
     );
 };

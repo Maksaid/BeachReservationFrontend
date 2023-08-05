@@ -1,11 +1,12 @@
 .beach-in-bar {
-    padding: 10px;
+    padding: 2px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    margin: 5px 0;
+    border-radius: 2px;
+    margin: 2px 2px;
     cursor: pointer;
     background-color: #EADDA3;
     transition: background-color 0.2s;
+    font-family: Bahnschrift, serif;
 }
 
 .beach-in-bar:hover {
@@ -16,6 +17,7 @@
     margin: 0;
     font-size: 18px;
     font-weight: bold;
+    font-family: Bahnschrift, serif;
 }
 
 .beach-in-bar p {

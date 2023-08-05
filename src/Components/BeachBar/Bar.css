@@ -1,14 +1,13 @@
 .bar-container {
     width: 20%; /* One-fourth of the screen width */
     height: 100vh; /* Full screen height */
-    border-right: 1px solid #ccc; /* Border on the right side */
     overflow-y: scroll; /* Enable vertical scroll if the content overflows */
     background-color: #C3C353;
 }
 
 /* Styling for scrollbar (optional) */
 .bar-container::-webkit-scrollbar {
-    width: 8px;
+    width: 1px;
 }
 
 .bar-container::-webkit-scrollbar-thumb {
