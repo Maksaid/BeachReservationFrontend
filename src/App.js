@@ -4,21 +4,52 @@ import Bar from "./Components/BeachBar/Bar";
 import BeachDetails from "./Components/BeachPage/BeachDetails";
 import NavBar from "./Components/NavigationBar/NavBar";
 import './Components/BeachPage/BeachDetails.css'
+import LoginForm from './Components/AuthForms/LoginForm'
+import SignupForm from './Components/AuthForms/SignupForm'
+import './Components/AuthForms/Form.css'
 
 function App() {
     const [isLoggedIn, setLoggedIn] = useState(false)
     const [currentBeachId, setCurrentBeachId] = useState(null)
+    const [isLoginFormVisible, setIsLoginFormVisible] = useState(false);
+    const [isSignupFormVisible, setSignupFormVisible] = useState(false);
 
     const setNewCurrentBeachId = (beachId) =>{
         setCurrentBeachId(beachId);
     }
+    const handleLoginClick = () => {
+        setIsLoginFormVisible(true); // Show the LoginForm when login button is clicked
+    };
+
+    const handleSignupClick = () => {
+        setSignupFormVisible(true);
+    }
+
+    const handleFormClose = () => {
+        setIsLoginFormVisible(false);
+        setSignupFormVisible(false);
+    }
+
+
     return (
         <div>
-            <NavBar handleLogin={setLoggedIn} isLoggedIn={isLoggedIn}/>
+            <NavBar handleLogin={setLoggedIn} handleLoginClick={handleLoginClick} handleSignupClick={handleSignupClick} isLoggedIn={isLoggedIn}/>
             <div className="app-container">
                 <Bar className="bar-container" handleBeachClick={setNewCurrentBeachId}/>
                 <BeachDetails className="beach-details" beachId={currentBeachId} />
             </div>
+            {isLoginFormVisible && (
+                <div className="blur-background">
+                    <LoginForm onClose={handleFormClose} isLoggedIn={setLoggedIn}/>
+                </div>
+            )}
+            {isSignupFormVisible && (
+                <div className="blur-background">
+                    <SignupForm onClose={handleFormClose} />
+                </div>
+            )
+
+            }
         </div>
 
     );
