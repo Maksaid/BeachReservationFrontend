@@ -23,9 +23,15 @@
 }
 
 .section{
-    width: 80%;
-    margin: 10px;
+    display: flex;
+    width: 100%;
     border-top: 1px solid black;
+    justify-content: center;
+}
+
+.beach-colors{
+    background: linear-gradient(to top, lightgoldenrodyellow, papayawhip,papayawhip,papayawhip, dodgerblue);
+
 }
 
 

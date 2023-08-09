@@ -5,7 +5,7 @@ const ReservationSection = ({beachDetails}) =>{
     const {beachColumnsCount, beachRowsCount, umbrellas} = beachDetails;
     console.log(beachDetails);
     return(
-        <div className="section">
+        <div className="section beach-colors">
             <h2>columns: {beachColumnsCount},rows: {beachRowsCount},</h2>
             <UmbrellaContainer beachDetails={beachDetails}/>
 

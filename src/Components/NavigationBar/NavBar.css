@@ -7,7 +7,7 @@
     overflow: hidden;
     align-items: center;
     justify-content: flex-end;
-    background-color: #36393B;
+    background: linear-gradient(to right,black,#36393B,black);
 }
 
 .nav-button {
