@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import BeachInBar from "./BeacInBar";
+import BeachInBar from "./BeachInBar/BeacInBar";
 import './Bar.css';
-import FilterArea from "./FilterMenu/FilterArea";
+import FilterArea from "../FilterMenu/FilterArea";
 
 
 const Bar = (props) => {

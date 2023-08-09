@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react'
-import Bar from "./Components/BeachBar/Bar";
+import Bar from "./Components/BeachBar/Bar/Bar";
 import BeachDetails from "./Components/BeachPage/BeachDetails";
 import NavBar from "./Components/NavigationBar/NavBar";
 import './Components/BeachPage/BeachDetails.css'

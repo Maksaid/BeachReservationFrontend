@@ -4,14 +4,17 @@
     background-color: #3498db; /* Placeholder color for umbrellas */
     border: 1px #282c34;
     margin: 5px;
+    flex-shrink: 0;
 }
 
 .umbrella-container {
     display: flex;
-    justify-content: center;
-    align-content: center;
+    flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: space-between;
     min-height: 200px; /* Minimum height for the container */
     max-height: 400px; /* Maximum height for the container */
     padding: 20px;
     background-color: #f9f9f9;
+    border: 1px solid black;
 }
