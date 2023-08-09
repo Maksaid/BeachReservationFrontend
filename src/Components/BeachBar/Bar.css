@@ -2,7 +2,7 @@
     width: 20%; /* One-fourth of the screen width */
     height: 100vh; /* Full screen height */
     overflow-y: scroll; /* Enable vertical scroll if the content overflows */
-    background-color: #C3C353;
+    background-color: #36393B;
 }
 
 /* Styling for scrollbar (optional) */

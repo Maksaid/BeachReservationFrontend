@@ -1,6 +1,10 @@
 // BeachDetails.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import BeachDescription from "./BeachDescription";
+import ReservationSection from "./ReservationSection";
+import './BeachDetails.css'
+import StartPage from "./StartPage";
 
 const BeachDetails = (props) => {
     const [beachDetails, setBeachDetails] = useState({});
@@ -33,7 +37,7 @@ const BeachDetails = (props) => {
     }, [props.beachId]);
 
     if (!beachDetails) {
-        return <div>No beach selected</div>;
+        return <StartPage />;
     }
     if (loading) {
         return <div>Loading...</div>; // Display a loading indicator while fetching data
@@ -41,13 +45,8 @@ const BeachDetails = (props) => {
 
     return (
         <div className="beach-details">
-            <h2>Beach Details</h2>
-            <p>Name: {beachDetails.beachName}</p>
-            <p>Score: {beachDetails.beachAverageScore}</p>
-            <p>Description: {beachDetails.beachDescription}</p>
-            <p>Country: {beachDetails.country}</p>
-            <p>City: {beachDetails.city}</p>
-            {/* Add other beach details here */}
+            <BeachDescription  beachDetails={beachDetails}/>
+            <ReservationSection  beachDetails={beachDetails}/>
         </div>
     );
 };

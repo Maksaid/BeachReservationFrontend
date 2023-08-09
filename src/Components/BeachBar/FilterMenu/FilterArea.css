@@ -1,13 +1,26 @@
-.filter-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+/* FilterArea.css */
+.filter-area {
     border: 1px solid #ccc;
-    border-radius: 2px;
-    background-color: #5E8470;
+    padding: 10px;
+    background-color: #B48291;
 }
 
-.filter{
-    margin: 0 5px;
+.filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+label {
+    margin-right: 5px;
+}
+
+select,
+input[type="number"],
+input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
 }

@@ -1,9 +1,9 @@
 .search-button {
     padding: 10px 20px;
     font-size: 16px;
-    border: 2px solid #007bff; /* Use your desired color for the border */
+    border: 2px solid black; /* Use your desired color for the border */
     border-radius: 20px; /* Round the corners */
-    background-color: #007bff; /* Use your desired color for the background */
+    background-color: black; /* Use your desired color for the background */
     color: #fff; /* Use your desired color for the text */
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
@@ -11,12 +11,12 @@
 
 /* Add hover effect */
 .search-button:hover {
-    background-color: #0056b3; /* Use a darker shade of the background color */
-    border-color: #0056b3; /* Use a darker shade of the border color */
+    background-color: black; /* Use a darker shade of the background color */
+    border-color: black; /* Use a darker shade of the border color */
 }
 
 /* Add focus effect */
 .search-button:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4); /* Add a subtle box shadow when the button is focused */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.4); /* Add a subtle box shadow when the button is focused */
 }

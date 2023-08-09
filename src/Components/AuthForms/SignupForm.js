@@ -30,7 +30,7 @@ const LoginForm = ({onClose}) => {
             setIsLoading(false); // End loading state
             setError(null); // Reset error state
         } catch (error) {
-            setError('Invalid email or password'); // Set error message
+            setError('user already exist'); // Set error message
             setIsLoading(false); // End loading state
         }
     };

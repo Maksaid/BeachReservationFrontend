@@ -1,8 +1,31 @@
 .beach-details{
-    flex: 1;
     display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center;
-    overflow-y: scroll; /* Enable vertical scroll if the content overflows */
-    background-color: #CD734F;
+    width: 80%;
+    height: 93vh;
+    flex-direction: column; /* Arrange components vertically */
+    align-items: flex-start; /* Align components to the left */
+    padding: 10px; /* Add padding for spacing */
+    background-color: #77BA99;
+    overflow-y: scroll;
 }
+
+.beach-details::-webkit-scrollbar {
+    width: 1px;
+}
+
+.beach-details::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.beach-details::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.section{
+    width: 80%;
+    margin: 10px;
+    border-top: 1px solid black;
+}
+
+

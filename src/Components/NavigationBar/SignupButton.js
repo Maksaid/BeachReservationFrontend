@@ -2,11 +2,11 @@
 import React from 'react';
 import './NavBar.css'
 
-const SignupButton = ({ onSignupClick , isLoggedIn}) => {
+const SignupButton = ({ onSignupClick }) => {
     return (
-        <div className={`nav-button ${isLoggedIn ? 'invisible' : 'in'}`} onClick={onSignupClick}>
-            👤{isLoggedIn? '' : 'Sign Up'}
-        </div>
+        <button className="button" onClick={onSignupClick}>
+            Sign Up
+        </button>
     );
 };
 

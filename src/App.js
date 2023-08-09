@@ -30,10 +30,14 @@ function App() {
         setSignupFormVisible(false);
     }
 
+    const handleProfileClick = () => {
+
+    }
+
 
     return (
         <div>
-            <NavBar handleLogin={setLoggedIn} handleLoginClick={handleLoginClick} handleSignupClick={handleSignupClick} isLoggedIn={isLoggedIn}/>
+            <NavBar handleLogin={setLoggedIn} handleLoginClick={handleLoginClick} handleSignupClick={handleSignupClick} isLoggedIn={isLoggedIn} handleProfileClick={handleProfileClick}/>
             <div className="app-container">
                 <Bar className="bar-container" handleBeachClick={setNewCurrentBeachId}/>
                 <BeachDetails className="beach-details" beachId={currentBeachId} />

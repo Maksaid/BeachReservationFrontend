@@ -1,0 +1,18 @@
+.start-container{
+    height: inherit;
+    width: 80%;
+    background-image: url("../../Images/beach.png");
+    overflow-y: scroll;
+}
+.start-container::-webkit-scrollbar {
+    width: 2px;
+}
+
+.start-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.start-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -24,8 +25,9 @@
   color: white;
 }
 .app-container {
+  overflow: hidden;
   display: flex; /* Use flexbox to create a horizontal layout */
-  height: 100vh; /* Full screen height */
+  height: 93vh; /* Full screen height */
 }
 
 .App-link {
