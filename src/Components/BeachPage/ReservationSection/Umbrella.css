@@ -1,0 +1,17 @@
+.square{
+    width: 30px;
+    height: 30px;
+    background-color: #3498db; /* Placeholder color for umbrellas */
+    border: 1px #282c34;
+    margin: 5px;
+}
+
+.umbrella-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-height: 200px; /* Minimum height for the container */
+    max-height: 400px; /* Maximum height for the container */
+    padding: 20px;
+    background-color: #f9f9f9;
+}

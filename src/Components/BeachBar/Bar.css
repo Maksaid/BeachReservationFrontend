@@ -1,6 +1,6 @@
 .bar-container {
     width: 20%; /* One-fourth of the screen width */
-    height: 100vh; /* Full screen height */
+    height: 100%; /* Full screen height */
     overflow-y: scroll; /* Enable vertical scroll if the content overflows */
     background-color: #36393B;
 }
