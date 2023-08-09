@@ -1,7 +1,7 @@
 .start-container{
     height: inherit;
     width: 80%;
-    background-image: url("../../Images/beach.png");
+    background-image: url("../../../Images/beach.png");
     overflow-y: scroll;
 }
 .start-container::-webkit-scrollbar {

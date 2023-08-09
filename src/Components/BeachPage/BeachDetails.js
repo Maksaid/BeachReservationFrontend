@@ -1,10 +1,10 @@
 // BeachDetails.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import BeachDescription from "./BeachDescription";
-import ReservationSection from "./ReservationSection";
+import BeachDescription from "./DescriptionSection/BeachDescription";
+import ReservationSection from "./ReservationSection/ReservationSection";
 import './BeachDetails.css'
-import StartPage from "./StartPage";
+import StartPage from "./StartPage/StartPage";
 
 const BeachDetails = (props) => {
     const [beachDetails, setBeachDetails] = useState({});
