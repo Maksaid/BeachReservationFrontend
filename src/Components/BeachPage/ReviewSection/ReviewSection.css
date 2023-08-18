@@ -4,7 +4,19 @@
     justify-content: space-evenly;
     align-content: space-evenly;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1px;
     border: 1px solid green;
     background: linear-gradient(to right, gray, darkgrey, gray);
+}
+
+.review-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid black;
+    justify-content: center;
+}
+
+.title{
+    background-color: darkgrey;
 }

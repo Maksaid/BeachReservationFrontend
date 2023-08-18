@@ -20,6 +20,11 @@ function App() {
     const handleLoginClick = () => {
         setIsLoginFormVisible(true); // Show the LoginForm when login button is clicked
     };
+    const handleLogoutClick = () =>{
+        localStorage.clear();
+        console.log(localStorage);
+        setLoggedIn(false);
+    }
 
     const handleSignupClick = () => {
         setSignupFormVisible(true);
@@ -37,10 +42,10 @@ function App() {
 
     return (
         <div>
-            <NavBar handleLogin={setLoggedIn} handleLoginClick={handleLoginClick} handleSignupClick={handleSignupClick} isLoggedIn={isLoggedIn} handleProfileClick={handleProfileClick}/>
+            <NavBar handleLogin={setLoggedIn} handleLoginClick={handleLoginClick} handleSignupClick={handleSignupClick} isLoggedIn={isLoggedIn} handleProfileClick={handleProfileClick} handleLogoutClick={handleLogoutClick}/>
             <div className="app-container">
                 <Bar className="bar-container" handleBeachClick={setNewCurrentBeachId}/>
-                <BeachDetails className="beach-details" beachId={currentBeachId} />
+                <BeachDetails className="beach-details" beachId={currentBeachId} isLoggedIn={{isLoggedIn}}/>
             </div>
             {isLoginFormVisible && (
                 <div className="blur-background">

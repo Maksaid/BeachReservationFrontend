@@ -3,8 +3,8 @@ import axios from "axios";
 import './ReviewSection.css'
 import Review from "./Review/Review";
 
-const ReviewSection = ({beachId}) => {
-
+const ReviewSection = ({beachId, isLoggedIn}) => {
+    const [rerender, setRerender] = useState(0);
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
         // Fetch beach details by id when beachId changes
@@ -25,18 +25,24 @@ const ReviewSection = ({beachId}) => {
                 });
         } else {
             setReviews(null);
-
         }
-    }, [beachId]);
+    }, [beachId, rerender]);
+
+    const onDetailsChanged = () =>{
+        setRerender(rerender + 1);
+    }
 
     return (
-        <div className="section">
+        <div className="review-section">
             <div className="container">
+                <p>Review Section</p>
                 {reviews !== null && (
                     reviews.map((review) =>
                         <Review
                             key={review.reviewId}
                             reviewDetails={review}
+                            isLoggedIn={isLoggedIn}
+                            onDetailsChanged={onDetailsChanged}
                         />
                     ))
                 }

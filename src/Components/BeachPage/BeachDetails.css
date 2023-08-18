@@ -4,7 +4,6 @@
     height: 100%;
     flex-direction: column; /* Arrange components vertically */
     align-items: flex-start; /* Align components to the left */
-    padding: 10px; /* Add padding for spacing */
 
     overflow-y: scroll;
 }
@@ -28,7 +27,8 @@
 
 .section{
     display: flex;
-    width: 100%;
+    width: inherit;
+    padding: 10px;
     border-top: 1px solid black;
     justify-content: center;
 }

@@ -3,8 +3,8 @@ import LoginButton from './LoginButton'
 import './NavBar.css'
 import SignupButton from './SignupButton';
 import ProfileButton from './ProfileButton'
-const NavBar = ({isLoggedIn, handleLoginClick, handleSignupClick, handleProfileClick}) => {
-
+import LogOutButton from "./LogOutButton";
+const NavBar = ({ isLoggedIn,handleLoginClick, handleSignupClick, handleProfileClick,handleLogoutClick}) => {
 
     return (
         <div className="nav-bar">
@@ -17,6 +17,7 @@ const NavBar = ({isLoggedIn, handleLoginClick, handleSignupClick, handleProfileC
             { isLoggedIn && (
                 <>
                     <ProfileButton onProfileClick={handleProfileClick} />
+                    <LogOutButton onLogoutClick={handleLogoutClick} />
                 </>
             )}
         </div>

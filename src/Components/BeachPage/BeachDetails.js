@@ -48,7 +48,7 @@ const BeachDetails = (props) => {
         <div className="beach-details back">
             <BeachDescription  beachDetails={beachDetails}/>
             <ReservationSection  beachDetails={beachDetails}/>
-            <ReviewSection beachId={beachDetails.id}/>
+            <ReviewSection beachId={beachDetails.id} isLoggedIn={props.isLoggedIn}/>
         </div>
     );
 };

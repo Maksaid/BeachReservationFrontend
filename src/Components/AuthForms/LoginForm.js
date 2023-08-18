@@ -21,9 +21,11 @@ const LoginForm = ({onClose, isLoggedIn}) => {
             });
 
             // Successful login, store JWT in localStorage or cookies
-            const jwtToken = response.data.token;
-            localStorage.setItem('jwtToken', jwtToken);
-            console.log(jwtToken);
+            const userDataAndToken = response.data;
+            localStorage.setItem('jwtToken', userDataAndToken.token);
+            localStorage.setItem('userName', userDataAndToken.userDto.userName);
+            localStorage.setItem('userId', userDataAndToken.userDto.id);
+            console.log(userDataAndToken);
             isLoggedIn(true);
             setShowSuccess(true);
             onClose();
