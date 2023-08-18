@@ -5,8 +5,12 @@
     flex-direction: column; /* Arrange components vertically */
     align-items: flex-start; /* Align components to the left */
     padding: 10px; /* Add padding for spacing */
-    background-color: #77BA99;
+
     overflow-y: scroll;
+}
+.back{
+
+    background-image: url("../../Images/beach.png");
 }
 
 .beach-details::-webkit-scrollbar {
@@ -30,7 +34,8 @@
 }
 
 .beach-colors{
-    background: linear-gradient(to top, lightgoldenrodyellow, papayawhip,papayawhip, lightblue, dodgerblue);
+    aspect-ratio: 960/53;
+    background-image: url("../../Images/layered-waves.png");
 
 }
 

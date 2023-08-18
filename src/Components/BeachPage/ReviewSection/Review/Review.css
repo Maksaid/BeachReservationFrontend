@@ -1,0 +1,20 @@
+.review {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    height: fit-content;
+    border: 1px solid red;
+    background: linear-gradient(60deg, white, ghostwhite, whitesmoke, paleturquoise);
+}
+.author {
+    padding-top: 5px;
+    padding-left: 10px;
+    align-self: flex-start;
+    font-size: larger;
+}
+
+.text {
+
+    padding: 20px 20px 20px 40px;
+}

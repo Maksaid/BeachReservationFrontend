@@ -4,6 +4,7 @@ import axios from 'axios';
 import BeachDescription from "./DescriptionSection/BeachDescription";
 import ReservationSection from "./ReservationSection/ReservationSection";
 import './BeachDetails.css'
+import ReviewSection from "./ReviewSection/ReviewSection";
 import StartPage from "./StartPage/StartPage";
 
 const BeachDetails = (props) => {
@@ -44,9 +45,10 @@ const BeachDetails = (props) => {
     }
 
     return (
-        <div className="beach-details">
+        <div className="beach-details back">
             <BeachDescription  beachDetails={beachDetails}/>
             <ReservationSection  beachDetails={beachDetails}/>
+            <ReviewSection beachId={beachDetails.id}/>
         </div>
     );
 };
