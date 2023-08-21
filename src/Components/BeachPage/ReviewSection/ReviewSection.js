@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import './ReviewSection.css'
 import Review from "./Review/Review";
+import CreateReviewInput from "./CreateReview/CreateReviewInput";
 
 const ReviewSection = ({beachId, isLoggedIn}) => {
     const [rerender, setRerender] = useState(0);
@@ -36,6 +37,7 @@ const ReviewSection = ({beachId, isLoggedIn}) => {
         <div className="review-section">
             <div className="container">
                 <p>Review Section</p>
+                <CreateReviewInput beachId={beachId} isLoggedIn={isLoggedIn} onDetailsChanged={onDetailsChanged}/>
                 {reviews !== null && (
                     reviews.map((review) =>
                         <Review

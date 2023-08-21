@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Bar from "./Components/BeachBar/Bar/Bar";
 import BeachDetails from "./Components/BeachPage/BeachDetails";
 import NavBar from "./Components/NavigationBar/NavBar";
@@ -9,10 +9,12 @@ import SignupForm from './Components/AuthForms/SignupForm'
 import './Components/AuthForms/Form.css'
 
 function App() {
-    const [isLoggedIn, setLoggedIn] = useState(false)
+
+    const [isLoggedIn, setLoggedIn] = useState((localStorage.length === 0))
     const [currentBeachId, setCurrentBeachId] = useState(null)
     const [isLoginFormVisible, setIsLoginFormVisible] = useState(false);
     const [isSignupFormVisible, setSignupFormVisible] = useState(false);
+
 
     const setNewCurrentBeachId = (beachId) =>{
         setCurrentBeachId(beachId);

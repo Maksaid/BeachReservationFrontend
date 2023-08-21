@@ -40,17 +40,17 @@
     color: #333;
 }
 
-.text textarea {
+.textarea {
     width: 100%;
     padding: 8px;
     border: none;
-    border-radius: 8px;
+    border-radius: 2px;
     background-color: #f5f5f5;
-    resize: vertical;
+    resize: none;
     font-family: inherit;
 }
 
-.text textarea:focus {
+.textarea:focus {
     outline: none;
     background-color: #fff;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
