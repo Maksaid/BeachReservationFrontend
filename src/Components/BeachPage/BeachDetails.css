@@ -4,7 +4,7 @@
     height: 100%;
     flex-direction: column; /* Arrange components vertically */
     align-items: flex-start; /* Align components to the left */
-
+    overflow-x: hidden;
     overflow-y: scroll;
 }
 .back{

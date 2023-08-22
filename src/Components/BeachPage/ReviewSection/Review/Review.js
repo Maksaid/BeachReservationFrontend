@@ -3,6 +3,7 @@ import {useState} from "react";
 import axios from "axios";
 
 const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
+    const [currentRate, setCurrentRate] = useState(reviewDetails.reviewScore);
     const [isEditing, setIsEditing] = useState(false);
     const [editedText, setEditedText] = useState(reviewDetails.text);
 
@@ -15,9 +16,9 @@ const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
     const handleSaveClick = async (e) => {
             e.preventDefault();
             try {
-                const response = await axios.post('https://localhost:7034/api/Review/update-review', {
+                await axios.post('https://localhost:7034/api/Review/update-review', {
                     ReviewId: reviewDetails.reviewId,
-                    NewReviewScore: parseInt(reviewDetails.reviewScore),
+                    NewReviewScore: parseInt(currentRate),
                     NewText: editedText
                 }, {
                     headers:
@@ -26,6 +27,7 @@ const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
                         }
                 });
                 reviewDetails.text = editedText;
+                onDetailsChanged();
             } catch
                 (error) {
                 console.error(error);
@@ -36,15 +38,16 @@ const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
     const handleDeleteClick = async (e) => {
         e.preventDefault();
         try {
-            await axios.delete('https://localhost:7034/api/Review/delete-review',  {
+            await axios.delete('https://localhost:7034/api/Review/delete-review', {
                 headers:
                     {
                         Authorization: `Bearer ${localStorage.getItem('jwtToken')}`
                     },
                 params: {
                     reviewId: reviewDetails.reviewId,
-                }});
-            reviewDetails=null;
+                }
+            });
+            reviewDetails = null;
             onDetailsChanged();
         } catch
             (error) {
@@ -72,7 +75,13 @@ const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
             <div className="author">
                 {reviewDetails.authorName}
                 <br/>
-                {reviewDetails.reviewScore}/10
+                {isEditing ? (
+                        <input className="input" pattern="\d" type="number" max="10" min="1" step="1" value={currentRate}
+                               onChange={(e) => setCurrentRate(e.target.value)}/>)
+                    : (
+                        reviewDetails.reviewScore + '/10'
+                    )}
+
             </div>
             <div className="text">
                 {isEditing ? (
@@ -86,7 +95,12 @@ const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
                         <button onClick={handleCancelClick}>Cancel</button>
                     </div>
                 ) : (
-                    reviewDetails.text
+                    <div className="flex">
+                        <div className="comment">{reviewDetails.text}</div>
+                        <div
+                            className="date">{reviewDetails.reviewDate.substring(0, 10)} {reviewDetails.reviewDate.substring(11, 16)}</div>
+                    </div>
+
                 )}
             </div>
         </div>

@@ -39,7 +39,7 @@ const ReviewSection = ({beachId, isLoggedIn}) => {
                 <p>Review Section</p>
                 <CreateReviewInput beachId={beachId} isLoggedIn={isLoggedIn} onDetailsChanged={onDetailsChanged}/>
                 {reviews !== null && (
-                    reviews.map((review) =>
+                    reviews.slice().reverse().map((review) =>
                         <Review
                             key={review.reviewId}
                             reviewDetails={review}
