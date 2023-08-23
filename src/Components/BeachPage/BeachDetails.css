@@ -27,7 +27,7 @@
 
 .section{
     display: flex;
-    width: inherit;
+    width: -webkit-fill-available;
     padding: 10px;
     border-top: 1px solid black;
     justify-content: center;

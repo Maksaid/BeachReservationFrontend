@@ -13,7 +13,6 @@ const ReservationSection = ({beachDetails}) => {
             <div className="beach-colors umbrella-section">
                 <UmbrellaContainer beachDetails={beachDetails} startDate={startDate} endDate={endDate}/>
             </div>
-        <DatePanel  setStartDate={setStartDate} setEndDate={setEndDate} endDate={endDate} startDate={startDate }/>
 </div>
 )
     ;

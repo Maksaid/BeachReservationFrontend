@@ -1,5 +1,5 @@
 .nav-bar {
-    height: 55px;
+    height: 7vh;
     display: flex;
     list-style-type: none;
     margin: 0;
@@ -50,10 +50,12 @@
     overflow: hidden;
     cursor: pointer;
     margin: 3px;
-    transition: .5s;
+    text-decoration: none;
+    transition: 0.2s;
     font-weight: 400;
     font-size: 15px;
-    border: 1px solid;
+    border-right: 1px solid;
+    border-left: 1px solid;
     font-family: inherit;
     text-transform: uppercase;
     color: var(--color);

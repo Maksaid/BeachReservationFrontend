@@ -1,5 +1,17 @@
 .input-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
-.input{}
+.input{
+    width: fit-content
+}
+.notification{
+    margin-left: 10px;
+    margin-top: 2px;
+    margin-right: 2px;
+    display: flex;
+    width: fit-content;
+    align-self: center;
+    border-radius: 8px;
+    color: whitesmoke;
+}

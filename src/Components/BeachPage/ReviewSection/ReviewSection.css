@@ -5,6 +5,7 @@
     align-content: space-evenly;
     flex-wrap: wrap;
     gap: 1px;
+    padding: 5px;
     border: 1px solid green;
     background: linear-gradient(to right, gray, darkgrey, gray);
 }
