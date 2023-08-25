@@ -33,8 +33,7 @@ const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
                 console.error(error);
             }
             setIsEditing(false);
-        }
-    ;
+        };
     const handleDeleteClick = async (e) => {
         e.preventDefault();
         try {

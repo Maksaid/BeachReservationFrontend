@@ -3,7 +3,6 @@ import './BeachDescription.css'
 
 const BeachDescription = ({beachDetails}) =>{
     const {beachName, beachAverageScore, country, city, beachDescription} = beachDetails;
-   // console.log(beachDetails);
 
     return(
         <div className="beach-description-main">
