@@ -1,8 +1,53 @@
-.umbrella-section{
+.umbrella-container{
+
+    flex-wrap: wrap;
+
+
+    /*min-width: 600px;
+    max-width: 700px;*/
+    width: 100%;
     display: flex;
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
     align-self: center;
+    /*justify-content: space-evenly;*/
+}
+.invisible{
+    visibility: hidden;
+}
+.umbrella{
+    background-color: dodgerblue; /* Placeholder color for umbrellas */
+    box-shadow: inset 0 0 0 0.2px black;
+    border-radius: 10px;
+    width: 90%;
+    height: 90%;
+    margin: 1px;
+}
+.umbr:hover{
+    background-color: orange;
+}
+.not-selected {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px black;
+}
+
+.not-selected:hover {
+    background-color: gray;
+    box-shadow: inset 0 0 0 2px black;
+}
+.transparent{
+    background-color: transparent;
+}
+
+.beach-background-res{
+    justify-content: center;
+    align-content: flex-start;
+    display: flex;
+    align-self: center;
+    padding: 100px 10px 10px;
+    margin: 10px 20px 20px;
+    min-width: 50%;
+    max-width: 90%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../../Images/layered-waves.png");
+    background-color: papayawhip;
 }

@@ -3,7 +3,7 @@
     border: 1px solid #ccc;
     border-radius: 1px;
     cursor: pointer;
-    background: linear-gradient(to right,#F9EBE0, #F9EBAF);
+    background: linear-gradient(to right,white, whitesmoke);
     transition: background-color 0.2s;
     font-family: Bahnschrift, serif;
 }

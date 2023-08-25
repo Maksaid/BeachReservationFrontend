@@ -3,11 +3,10 @@
     display: flex;
     margin-top: 1px;
     margin-bottom: 1px;
-    flex-grow: 1;
+    width: 90%;
     height: fit-content;
-    border: 1px solid black;
-    background: linear-gradient(60deg, white, ghostwhite, whitesmoke, white);
-    border-radius: 3%;
+    border-top: 1px solid black;
+    background-color: #999999;
 }
 .author {
     padding-top: 5px;

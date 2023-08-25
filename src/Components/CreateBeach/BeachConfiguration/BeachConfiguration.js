@@ -3,9 +3,8 @@ import "./BeachConfiguration.css"
 import Umbrella from "./Umbrella";
 
 
-const BeachConfiguration = ({currRows, currColumns}) => {
+const BeachConfiguration = ({currRows, currColumns, currIndexes}) => {
     const [indexes, setIndexes] = useState(Array.from({length: currRows * currColumns}, (_, i) => i));
-    const currIndexes = useRef(Array.from({length: currRows * currColumns}, (_, i) => i));
 
     useEffect(() => {
         setIndexes(Array.from({length: currRows * currColumns}, (_, i) => i))
@@ -17,16 +16,14 @@ const BeachConfiguration = ({currRows, currColumns}) => {
             currIndexes.current = currIndexes.current.filter(el => el !== index);
         else
             currIndexes.current.push(index);
-        console.log(currIndexes.current);
-        console.log(index)
+
     }
 
     return (
-        <div className="beach-background">
+        <div className="beach-background" style={{width:currColumns*30+"px",height:currRows*30+"px"}}>
             <div className="umbr-container">
                 {indexes.map((umbrella, i) => (
-                    <Umbrella key={i} id={i}  style={{flexBasis: 100 / currColumns + "%"}} deleteIndex={deleteIndex} currColumns={currColumns} />
-
+                    <Umbrella key={i} id={i}  deleteIndex={deleteIndex} currColumns={currColumns} />
                 ))}
             </div>
         </div>

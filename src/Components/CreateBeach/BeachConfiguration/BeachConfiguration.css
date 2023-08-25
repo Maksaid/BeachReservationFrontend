@@ -1,8 +1,9 @@
 .umbr-container{
 
     flex-wrap: wrap;
-    min-height: 300px;
-    max-height: 350px;
+
+    height: inherit;
+
     /*min-width: 600px;
     max-width: 700px;*/
     width: 100%;
@@ -13,8 +14,8 @@
 .umbr{
     background-color: #faaa5f; /* Placeholder color for umbrellas */
     /*border: 1px solid #030303;*/
-    box-shadow: inset 0 0 0 2px black;
-    /*flex: 0 0 12.5%;*/
+    box-shadow: inset 0 0 0 0.2px black;
+    /*box-shadow: inset 0 0 0 4px #ffefd5;*/
     border-radius: 10px;
 }
 .umbr:hover{
@@ -22,13 +23,21 @@
 }
 .not-selected {
     background-color: transparent;
+    box-shadow: inset 0 0 0 1px black;
+}
+
+.not-selected:hover {
+    background-color: gray;
     box-shadow: inset 0 0 0 2px black;
 }
 
 .beach-background{
     padding: 100px 10px 10px;
     margin: 10px 20px 20px;
-    width: 50%;
-    aspect-ratio: 960/653;
+    min-width: 10%;
+    max-width: 90%;
+    background-size: 100%;
+    background-repeat: no-repeat;
     background-image: url("../../../Images/layered-waves.png");
+    background-color: papayawhip;
 }
