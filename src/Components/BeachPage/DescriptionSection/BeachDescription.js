@@ -6,7 +6,7 @@ const BeachDescription = ({beachDetails}) =>{
 
     return(
         <div className="beach-description-main">
-            <h2 className="p">{beachName}</h2>
+            <h2 className="header">{beachName}</h2>
             <div>
                 <div className="p">Rating: {beachAverageScore}    {country}, {city}</div>
             </div>

@@ -6,9 +6,20 @@
 }
 
 .p{
-    width: fit-content;
+    width: 100%;
     padding: 10px;
-    background-color: lightgrey;
+    color: aliceblue;
+    background-color: #282c34;
     border: 1px solid black;
     border-radius: 10px;
+    align-self: flex-start;
+}
+
+.header{
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    color: aliceblue;
+    background-color: #282c34;
+
 }
