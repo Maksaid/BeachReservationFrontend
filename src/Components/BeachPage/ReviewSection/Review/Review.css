@@ -23,7 +23,6 @@
     top: 5px;
     right: 30px;
     cursor: pointer;
-    color: #999;
 }
 .delete-button
 {
@@ -31,8 +30,6 @@
     top: 5px;
     right: 5px;
     cursor: pointer;
-    color: #999;
-
 }
 
 .edit-button:hover {
@@ -68,6 +65,10 @@
 
 .comment{
     flex-grow: 1;
+}
+
+.delete-button:hover{
+    color: red;
 }
 
 

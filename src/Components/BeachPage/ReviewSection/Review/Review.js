@@ -1,6 +1,7 @@
 import './Review.css'
 import {useState} from "react";
 import axios from "axios";
+import {toast} from "react-toastify";
 
 const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
     const [currentRate, setCurrentRate] = useState(reviewDetails.reviewScore);
@@ -26,6 +27,16 @@ const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
                             Authorization: `Bearer ${localStorage.getItem('jwtToken')}`
                         }
                 });
+                toast.success('Review updated!', {
+                    position: "top-right",
+                    autoClose: 3001,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
                 reviewDetails.text = editedText;
                 onDetailsChanged();
             } catch
@@ -47,6 +58,16 @@ const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
                 }
             });
             reviewDetails = null;
+            toast.success('Review deleted!', {
+                position: "top-right",
+                autoClose: 3001,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
             onDetailsChanged();
         } catch
             (error) {
