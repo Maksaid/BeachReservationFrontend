@@ -9,6 +9,9 @@ import LoginForm from './Components/AuthForms/LoginForm'
 import SignupForm from './Components/AuthForms/SignupForm'
 import './Components/AuthForms/Form.css'
 import CreateBeach from "./Components/CreateBeach/CreateBeach";
+import {ToastContainer, toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
 
@@ -74,7 +77,9 @@ function App() {
                 )
 
                 }
+                <ToastContainer/>
             </div>
+
         </Router>
 
 

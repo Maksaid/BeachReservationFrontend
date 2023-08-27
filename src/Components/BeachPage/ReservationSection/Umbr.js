@@ -17,7 +17,7 @@ const Umbr = ({umbrellaDetails, visible, style, id}) => {
                  }}>
             </div>
             {showWindow && (
-                <ReservationWindow handleClose={handleClose} umbrellaInfo={umbrellaDetails} />
+                <ReservationWindow handleClose={handleClose} umbrellaInfo={umbrellaDetails[0]} />
             )}
         </div>
 
