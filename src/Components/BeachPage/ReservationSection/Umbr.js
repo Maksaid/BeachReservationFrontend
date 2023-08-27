@@ -1,20 +1,24 @@
 import {useState} from "react";
 import './ReservationSection.css'
+import ReservationWindow from "./ReservationWindow/ReservationWindow";
 
 const Umbr = ({umbrellaDetails, visible, style, id}) => {
-    const [isClicked, setIsClicked] = useState(false);
+    const [showWindow, setShowWindow] = useState(false);
 
 
-    const handleUmbrClick = () =>{
+    const handleClose = () =>{
+        setShowWindow(false)
     }
     return (
         <div style={style} className="transparent">
             <div id={id} className={'umbrella ' + (!visible ? 'invisible' : '')}
                  onClick={event => {
-                     handleUmbrClick();
-                     setIsClicked(!isClicked);
+                     setShowWindow(true);
                  }}>
             </div>
+            {showWindow && (
+                <ReservationWindow handleClose={handleClose} umbrellaInfo={umbrellaDetails[0]} />
+            )}
         </div>
 
     );

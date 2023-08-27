@@ -21,8 +21,8 @@
     height: 90%;
     margin: 1px;
 }
-.umbr:hover{
-    background-color: orange;
+.umbrella:hover{
+    background-color: lightskyblue;
 }
 .not-selected {
     background-color: transparent;

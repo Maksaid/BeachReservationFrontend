@@ -1,0 +1,9 @@
+.date-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    gap: 10px;
+    background: linear-gradient(to left, gainsboro, ghostwhite);
+}
