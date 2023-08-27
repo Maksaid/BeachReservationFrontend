@@ -14,11 +14,10 @@ const Umbr = ({umbrellaDetails, visible, style, id}) => {
             <div id={id} className={'umbrella ' + (!visible ? 'invisible' : '')}
                  onClick={event => {
                      setShowWindow(true);
-                     console.log(umbrellaDetails);
                  }}>
             </div>
             {showWindow && (
-                <ReservationWindow handleClose={handleClose} umbrellaInfo={umbrellaDetails} />
+                <ReservationWindow handleClose={handleClose} umbrellaInfo={umbrellaDetails[0]} />
             )}
         </div>
 
