@@ -5,8 +5,7 @@ import './ReservationSection.css'
 const ReservationSection = ({beachDetails}) => {
     const {beachColumnsCount, beachRowsCount, umbrellas} = beachDetails;
     const umbrellaIndexes = umbrellas.map(umbrella => umbrella.index);
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
+
 
 
     return (

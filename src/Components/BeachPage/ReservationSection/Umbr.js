@@ -14,7 +14,6 @@ const Umbr = ({umbrellaDetails, visible, style, id}) => {
             <div id={id} className={'umbrella ' + (!visible ? 'invisible' : '')}
                  onClick={event => {
                      setShowWindow(true);
-                     console.log(umbrellaDetails);
                  }}>
             </div>
             {showWindow && (
