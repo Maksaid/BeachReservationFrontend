@@ -88,10 +88,8 @@ const ReservationWindow = ({umbrellaInfo, handleClose}) => {
                     </Alert>
                 ):""}
             </div>
-            <div>
                 {umbrellaInfo.reservations === undefined || umbrellaInfo.reservations.length === 0 ?
                     <Alert variant="success" className="font-monospace">All dates are free</Alert> : ""}
-            </div>
             <DatePanel startDate={startDate} endDate={endDate} setStartDate={setStartDate} setEndDate={setEndDate}/>
             <CloseButton onClick={handleClose} className="close-button">
             </CloseButton>
