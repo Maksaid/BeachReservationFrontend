@@ -1,6 +1,6 @@
 .start-container{
     height: inherit;
-    width: 80%;
+    width: 100%;
     background-image: url("../../../Images/beach.png");
     overflow-y: scroll;
 }

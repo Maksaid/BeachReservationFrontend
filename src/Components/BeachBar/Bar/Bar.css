@@ -3,7 +3,9 @@
     height: 100%; /* Full screen height */
     overflow-y: scroll; /* Enable vertical scroll if the content overflows */
     background-color: #36393B;
+    transition: 0.1s cubic-bezier(0.42, 0, 0.81, 1);
 }
+
 
 /* Styling for scrollbar (optional) */
 .bar-container::-webkit-scrollbar {
@@ -17,4 +19,13 @@
 
 .bar-container::-webkit-scrollbar-thumb:hover {
     background-color: #555;
+}
+.visible{
+    opacity: 1; /* Visible */
+    transform: translateX(0);
+}
+.invisible{
+    opacity: 0;
+    width: 0px;
+    transform: translate(-100%);
 }
