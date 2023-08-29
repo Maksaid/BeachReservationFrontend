@@ -19,7 +19,7 @@ function App() {
     const [currentBeachId, setCurrentBeachId] = useState(null)
     const [isLoginFormVisible, setIsLoginFormVisible] = useState(false);
     const [isSignupFormVisible, setSignupFormVisible] = useState(false);
-
+    const [isBeachBarToggled, setBeachBarToggled] = useState(true)
 
     const setNewCurrentBeachId = (beachId) => {
         setCurrentBeachId(beachId);
@@ -35,6 +35,9 @@ function App() {
 
     const handleSignupClick = () => {
         setSignupFormVisible(true);
+    }
+    const toggleBeachBar = () => {
+        setBeachBarToggled(!isBeachBarToggled);
     }
 
     const handleFormClose = () => {
@@ -52,11 +55,14 @@ function App() {
             <div className="app">
                 <NavBar handleLogin={setLoggedIn} handleLoginClick={handleLoginClick}
                         handleSignupClick={handleSignupClick} isLoggedIn={isLoggedIn}
-                        handleProfileClick={handleProfileClick} handleLogoutClick={handleLogoutClick}/>
+                        handleProfileClick={handleProfileClick} handleLogoutClick={handleLogoutClick}
+                        toggleBeachBar={toggleBeachBar}
+                        isBeachBarToggled={isBeachBarToggled}/>
                 <div className="app-container">
                     <Switch>
                         <Route exact path="/">
-                            <Bar className="bar-container" handleBeachClick={setNewCurrentBeachId}/>
+                                <Bar visible={isBeachBarToggled?"visible":"invisible"} currentBeach={currentBeachId}
+                                     handleBeachClick={setNewCurrentBeachId}/>
                             <BeachDetails className="beach-details" beachId={currentBeachId} isLoggedIn={{isLoggedIn}}/>
                         </Route>
                         <Route path="/create">

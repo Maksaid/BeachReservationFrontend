@@ -1,34 +1,37 @@
 import React from 'react';
-import LoginButton from './LoginButton'
 import './NavBar.css'
-import SignupButton from './SignupButton';
-import ProfileButton from './ProfileButton'
-import LogOutButton from "./LogOutButton";
 import { Link } from 'react-router-dom'
-const NavBar = ({ isLoggedIn,handleLoginClick, handleSignupClick, handleProfileClick,handleLogoutClick}) => {
+import  Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+const NavBar = ({ isLoggedIn,handleLoginClick, handleSignupClick, handleProfileClick,handleLogoutClick, toggleBeachBar, isBeachBarToggled}) => {
 
     return (
         <div className="nav-bar">
+            <div style={{display:"flex",justifyContent:"left", flexGrow:1}}>
+                <Button className="m-1" style={{justifySelf:"left"}} variant="light" size="lg" onClick={toggleBeachBar}>
+                    {isBeachBarToggled?"<-":"->"}
+                </Button>
+            </div>
+
             <Link to="/" style={{ textDecoration: 'none' }}>
-                <div className="button">
+                <Button className="m-1" variant="light" size="lg">
                     Home
-                </div>
+                </Button>
             </Link>
             <Link to="/create" style={{ textDecoration: 'none' }}>
-                <div className="button">
+                <Button variant="light" className="m-1" size="lg">
                     Create Beach
-                </div>
+                </Button>
             </Link>
             { !isLoggedIn && (
                 <>
-                    <SignupButton onSignupClick={handleSignupClick}  />
-                    <LoginButton onLoginClick={handleLoginClick}  />
+                    <Button variant="light" size="lg" className="m-1" onClick={handleSignupClick} >Sign up</Button>{' '}
+                    <Button variant="light" size="lg"  className="m-1" onClick={handleLoginClick}  >Log in</Button>{' '}
                 </>
     )}
             { isLoggedIn && (
                 <>
-                    <ProfileButton onProfileClick={handleProfileClick} />
-                    <LogOutButton onLogoutClick={handleLogoutClick} />
+                    <Button variant="danger" size="lg"  className="m-1" onClick={handleLogoutClick} >Log out</Button>
                 </>
             )}
         </div>

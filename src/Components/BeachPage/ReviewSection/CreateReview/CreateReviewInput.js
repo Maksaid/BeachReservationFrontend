@@ -2,6 +2,8 @@ import {useState} from "react";
 import axios from "axios";
 import "./CreateReview.css"
 import {toast} from "react-toastify";
+import {Rating} from "@mui/material";
+import Button from "react-bootstrap/Button";
 
 const CreateReviewInput = ({isLoggedIn, beachId, onDetailsChanged}) => {
     const [inputClicked, setInputClicked] = useState(false);
@@ -72,17 +74,18 @@ const CreateReviewInput = ({isLoggedIn, beachId, onDetailsChanged}) => {
     return (isLoggedIn &&
         <div className="input-container">
             <label>Score:</label>
-            <input className="input" onClick={handleInputClick} pattern="\d" type="number" max="10" min="1" step="1"
-                   value={currentRate}
-                   onChange={(e) => setCurrentRate(e.target.value)}/>
+            <Rating size="small" value={5} precision={0.5} value={currentRate/2}
+                    onChange={(e, newValue) => {
+                        setCurrentRate(newValue*2);
+                    }}/>
             <br/>
             <label>Review Text</label>
             <textarea className="textarea text" onClick={handleInputClick} value={text}
                       onChange={(e) => setText(e.target.value)}/>
             {inputClicked &&
                 <div>
-                    <button id="save-button" className="button" onClick={handleSaveButton}>Save</button>
-                    <button id="cancel-button" className="button" onClick={handleCancelButton}>Cancel</button>
+                    <Button id="save-button" className="m-1" variant="light" onClick={handleSaveButton}>Save</Button>
+                    <Button id="cancel-button" className="m-1" variant="light" onClick={handleCancelButton}>Cancel</Button>
                 </div>
             }
         </div>
