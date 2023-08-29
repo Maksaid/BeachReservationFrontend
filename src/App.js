@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Bar from "./Components/BeachBar/Bar/Bar";
 import BeachDetails from "./Components/BeachPage/BeachDetails";
-import NavBar from "./Components/NavigationBar/NavBar";
+import NavBarComponent from "./Components/NavigationBar/NavBarComponent";
 import './Components/BeachPage/BeachDetails.css'
 import LoginForm from './Components/AuthForms/LoginForm'
 import SignupForm from './Components/AuthForms/SignupForm'
@@ -53,11 +53,13 @@ function App() {
     return (
         <Router>
             <div className="app">
-                <NavBar handleLogin={setLoggedIn} handleLoginClick={handleLoginClick}
-                        handleSignupClick={handleSignupClick} isLoggedIn={isLoggedIn}
-                        handleProfileClick={handleProfileClick} handleLogoutClick={handleLogoutClick}
-                        toggleBeachBar={toggleBeachBar}
-                        isBeachBarToggled={isBeachBarToggled}/>
+                <div style={{height:"fit-content"}}>
+                <NavBarComponent handleLogin={setLoggedIn} handleLoginClick={handleLoginClick}
+                                 handleSignupClick={handleSignupClick} isLoggedIn={isLoggedIn}
+                                 handleProfileClick={handleProfileClick} handleLogoutClick={handleLogoutClick}
+                                 toggleBeachBar={toggleBeachBar}
+                                 isBeachBarToggled={isBeachBarToggled}/>
+                </div>
                 <div className="app-container">
                     <Switch>
                         <Route exact path="/">

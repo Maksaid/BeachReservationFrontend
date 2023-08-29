@@ -74,7 +74,7 @@ const CreateReviewInput = ({isLoggedIn, beachId, onDetailsChanged}) => {
     return (isLoggedIn &&
         <div className="input-container">
             <label>Score:</label>
-            <Rating size="large" value={5} precision={0.5} value={currentRate/2}
+            <Rating size="large" defaultValue={5} precision={0.5} value={currentRate/2}
                     onChange={(e, newValue) => {
                         setCurrentRate(newValue*2);
                     }}/>
