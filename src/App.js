@@ -53,7 +53,7 @@ function App() {
     return (
         <Router>
             <div className="app">
-                <div style={{height:"fit-content"}}>
+                <div style={{height:"9vh"}}>
                 <NavBarComponent handleLogin={setLoggedIn} handleLoginClick={handleLoginClick}
                                  handleSignupClick={handleSignupClick} isLoggedIn={isLoggedIn}
                                  handleProfileClick={handleProfileClick} handleLogoutClick={handleLogoutClick}

@@ -7,7 +7,7 @@ import {toast, ToastContainer} from "react-toastify";
 const CreateBeach = () => {
     const [beachName, setBeachName] = useState("");
     const [beachDescription, setBeachDescription] = useState("");
-    const [image, setImage] = useState(null);
+    const [images, setImages] = useState([]);
     const [imageURL, setImageURL] = useState(null); // Store the URL of the image
     const [currRows, setCurrRows] = useState(2);
     const [currColumns, setCurrColumns] = useState(4);
@@ -26,19 +26,6 @@ const CreateBeach = () => {
                     theme: "colored",
                 });
         }
-
-    useEffect(() => {
-        if (image) {
-            // Create a Blob from the byte[] array
-            const blob = new Blob([image], {type: "image/jpeg"}); // Adjust the type accordingly
-
-            // Create a URL for the Blob
-            const url = URL.createObjectURL(blob);
-
-            // Set the URL in state
-            setImageURL(url);
-        }
-    }, [image]);
     const handleSubmitCreation = async (e) => {
             e.preventDefault();
             if (beachName === "" && beachDescription === "") {
@@ -90,10 +77,12 @@ const CreateBeach = () => {
     const sendBackgroundImage = async (beachId, e) => {
         e.preventDefault();
         try {
-            if (image) {
+            if (images) {
                 const formData = new FormData();
-                formData.append("file", new Blob([new Uint8Array(image)], {type: "image/jpeg"})); // Adjust the type accordingly
+                for (let i=0; i<images.length; i++ )
+                    formData.append('files',new Blob([new Uint8Array(images[i])], {type: "image/jpeg"}));
                 formData.append("beachId", beachId);
+                console.log(images)
 
                 await axios.post('https://localhost:7034/api/Image/add-background-image', formData, {
                     maxContentLength: 20000000,
@@ -103,13 +92,13 @@ const CreateBeach = () => {
                     },
                 });
 
-                setImage(null);
+                setImages([]);
                 setImageURL("");
                 setBeachName("");
                 setBeachDescription("");
                 setCurrRows(2);
                 setCurrColumns(4);
-                toast.success("beach-foto added"
+                toast.success("beach-photo added"
                     , {
                         position: "top-right",
                         autoClose: 3001,
@@ -135,28 +124,34 @@ const CreateBeach = () => {
 
 
     function handleImage(e) {
-        const file = e.target.files[0];
+        const files = e.target.files;
 
-        if (file) {
-            // Create a FileReader
-            const reader = new FileReader();
+        if (files) {
+            const newImages = [];
 
-            // Set up an event handler for when the file has been loaded
-            reader.onload = (event) => {
-                // event.target.result contains the array buffer of the image
-                const arrayBuffer = event.target.result;
+            // Loop through the selected files and add them to newImages
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
 
-                // Now you can convert the array buffer to a byte[] array
-                const byteArray = new Uint8Array(arrayBuffer);
+                reader.onload = (event) => {
+                    const arrayBuffer = event.target.result;
+                    const byteArray = new Uint8Array(arrayBuffer);
 
-                // Set the image and byteArray in your component's state
-                setImage(byteArray);
-            };
+                    newImages.push(Array.from(byteArray));
 
-            // Read the image file as an array buffer
-            reader.readAsArrayBuffer(file);
+                    // Check if this is the last file, then setImages
+                    if (i === files.length - 1) {
+                        setImages([...images, ...newImages]);
+                    }
+                };
+
+                reader.readAsArrayBuffer(file);
+            }
         }
     }
+
+
 
     return (
         <div className="main">
@@ -175,7 +170,7 @@ const CreateBeach = () => {
 
             <label>Add BackgroundImage</label>
             <form>
-                <input type="file" name="my_image" onChange={handleImage}/>
+                <input type="file" name="my_image" multiple onChange={handleImage}/>
                 {imageURL && <img src={imageURL} alt="Uploaded" style={{aspectRatio: 4 / 3, width: 100}}/>}
             </form>
             <button onClick={handleSubmitCreation}>Send</button>

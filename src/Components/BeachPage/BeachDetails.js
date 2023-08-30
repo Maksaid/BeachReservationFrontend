@@ -12,7 +12,6 @@ import defaultImage from '../../Images/beach.png';
 const BeachDetails = (props) => {
     const [beachDetails, setBeachDetails] = useState({});
     const [loading, setLoading] = useState(true);
-    const [dataUrl, setDataUrl] = useState(defaultImage)
 
 
     useEffect(() => {
@@ -27,13 +26,6 @@ const BeachDetails = (props) => {
                 .then(response => {
                     setBeachDetails(response.data);
                     setLoading(false); // Set loading to false once the data is fetched
-                    if (response.data.images.length > 0){
-                        const base64String = response.data.images[0].data;
-                        setDataUrl(`data:image/jpeg;base64,${base64String}`)
-                    }
-                    else
-                        setDataUrl(defaultImage)
-                    console.log(response);
                 })
                 .catch(error => {
                     console.error('Error fetching beach details:', error);
@@ -56,7 +48,7 @@ const BeachDetails = (props) => {
     }
 
     return (
-        <div className="beach-details" style={{backgroundImage:`url(${dataUrl})`, backgroundSize:'cover'}}>
+        <div className="beach-details">
                 <BeachDescription  beachDetails={beachDetails}/>
                 <ReservationSection  beachDetails={beachDetails}/>
                 <ReviewSection beachId={beachDetails.id} isLoggedIn={props.isLoggedIn}/>
