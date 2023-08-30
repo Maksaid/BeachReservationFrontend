@@ -1,6 +1,8 @@
 import './Review.css'
 import {useState} from "react";
 import axios from "axios";
+import {toast} from "react-toastify";
+import {Rating} from "@mui/material";
 
 const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
     const [currentRate, setCurrentRate] = useState(reviewDetails.reviewScore);
@@ -14,26 +16,36 @@ const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
     };
 
     const handleSaveClick = async (e) => {
-            e.preventDefault();
-            try {
-                await axios.post('https://localhost:7034/api/Review/update-review', {
-                    ReviewId: reviewDetails.reviewId,
-                    NewReviewScore: parseInt(currentRate),
-                    NewText: editedText
-                }, {
-                    headers:
-                        {
-                            Authorization: `Bearer ${localStorage.getItem('jwtToken')}`
-                        }
-                });
-                reviewDetails.text = editedText;
-                onDetailsChanged();
-            } catch
-                (error) {
-                console.error(error);
-            }
-            setIsEditing(false);
-        };
+        e.preventDefault();
+        try {
+            await axios.post('https://localhost:7034/api/Review/update-review', {
+                ReviewId: reviewDetails.reviewId,
+                NewReviewScore: parseInt(currentRate),
+                NewText: editedText
+            }, {
+                headers:
+                    {
+                        Authorization: `Bearer ${localStorage.getItem('jwtToken')}`
+                    }
+            });
+            toast.success('Review updated!', {
+                position: "top-right",
+                autoClose: 3001,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+            reviewDetails.text = editedText;
+            onDetailsChanged();
+        } catch
+            (error) {
+            console.error(error);
+        }
+        setIsEditing(false);
+    };
     const handleDeleteClick = async (e) => {
         e.preventDefault();
         try {
@@ -47,6 +59,16 @@ const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
                 }
             });
             reviewDetails = null;
+            toast.success('Review deleted!', {
+                position: "top-right",
+                autoClose: 3001,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
             onDetailsChanged();
         } catch
             (error) {
@@ -75,11 +97,13 @@ const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
                 {reviewDetails.authorName}
                 <br/>
                 {isEditing ? (
-                        <input className="input" pattern="\d" type="number" max="10" min="1" step="1" value={currentRate}
-                               onChange={(e) => setCurrentRate(e.target.value)}/>)
-                    : (
-                        reviewDetails.reviewScore + '/10'
-                    )}
+                    <Rating size="small" value={currentRate / 2} precision={0.5}
+                            onChange={(e, newValue) => {
+                                setCurrentRate(newValue*2);
+                            }}/>)
+                                : (
+                                <Rating value={currentRate / 2} size="small" precision={0.5} readOnly={true}/>
+                )}
 
             </div>
             <div className="text">
@@ -103,7 +127,7 @@ const Review = ({reviewDetails, isLoggedIn, onDetailsChanged}) => {
                 )}
             </div>
         </div>
-    )
-        ;
+)
+;
 }
 export default Review;

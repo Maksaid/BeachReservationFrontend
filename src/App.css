@@ -27,7 +27,7 @@
 .app-container {
   overflow: hidden;
   display: flex; /* Use flexbox to create a horizontal layout */
-  height: 93vh; /* Full screen height */
+  height: 91vh; /* Full screen height */
 }
 .app{
   overflow: hidden;

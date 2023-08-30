@@ -20,9 +20,10 @@ const Bar = (props) => {
     }, []);
 
     return (
-        <div className="bar-container">
+        <div className={"bar-container " + props.visible}>
             {beaches.map(beach => (
                 <BeachInBar
+                    currentBeachId={props.currentBeach}
                     key={beach.id}
                     beach={beach}
                     onClick={() => props.handleBeachClick(beach.id)}

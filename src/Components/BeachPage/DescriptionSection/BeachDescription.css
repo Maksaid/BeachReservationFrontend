@@ -8,9 +8,7 @@
 .p{
     width: 100%;
     padding: 10px;
-    color: aliceblue;
-    background-color: #282c34;
-    border: 1px solid black;
+    color: black;
     border-radius: 10px;
     align-self: flex-start;
 }
@@ -19,7 +17,15 @@
     width: fit-content;
     padding: 10px;
     border-radius: 10px;
-    color: aliceblue;
-    background-color: #282c34;
+    color: black;
 
+}
+
+.carousel-size{
+    width: 80%;
+    aspect-ratio: 3/2;
+}
+
+.carousel-image{
+    width: inherit;
 }
