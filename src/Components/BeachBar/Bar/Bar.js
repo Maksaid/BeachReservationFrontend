@@ -20,7 +20,7 @@ const Bar = (props) => {
     }, []);
 
     return (
-        <div className={"bar-container " + props.visible}>
+        <div className={"bar-container " + props.visible} style={{paddingTop:"10.5vh"}}>
             {beaches.map(beach => (
                 <BeachInBar
                     currentBeachId={props.currentBeach}

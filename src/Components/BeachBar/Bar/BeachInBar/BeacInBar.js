@@ -8,8 +8,8 @@ const BeachInBar = ({beach, onClick, currentBeachId}) => {
 
 
     return (
-        <Card className={"beach-in-bar " + (currentBeachId === beach.id ? "chosen" : 'default')} onClick={onClick}>
-            <Card.Body className="ps-2 pt-1 pb-1">
+        <Card className={"beach-in-bar "} onClick={onClick}>
+            <Card.Body className={"ps-2 pt-1 pb-1 " + (currentBeachId === beach.id ? "chosen" : 'default')}>
                 <Card.Title className="font-monospace">{beachName}</Card.Title>
                 <Card.Text className="font-monospace">{country}, {city}</Card.Text>
                 <Rating value={beachAverageScore / 2} precision={0.1} readOnly={true} size="small"/>

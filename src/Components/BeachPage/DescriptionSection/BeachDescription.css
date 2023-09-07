@@ -23,9 +23,10 @@
 
 .carousel-size{
     width: 80%;
-    aspect-ratio: 3/2;
+    height: inherit;
 }
 
 .carousel-image{
-    width: inherit;
+    height: 70vh;
+    object-fit: cover;
 }

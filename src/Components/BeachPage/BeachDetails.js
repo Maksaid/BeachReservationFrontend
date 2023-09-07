@@ -48,7 +48,7 @@ const BeachDetails = (props) => {
     }
 
     return (
-        <div className="beach-details">
+        <div className="beach-details" style={{paddingTop:"10.5vh"}}>
                 <BeachDescription  beachDetails={beachDetails}/>
                 <ReservationSection  beachDetails={beachDetails}/>
                 <ReviewSection beachId={beachDetails.id} isLoggedIn={props.isLoggedIn}/>

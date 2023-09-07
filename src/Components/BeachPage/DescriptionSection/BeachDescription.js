@@ -26,9 +26,11 @@ const BeachDescription = ({beachDetails}) =>{
                 <p >{beachDescription}</p>
             </div>
             <Carousel className="carousel-size" fade>
-                {beachDetails.images !== undefined && beachDetails.images.length > 0 && beachDetails.images.map(image =>
+                {beachDetails.images !== undefined && beachDetails.images.length > 0 && beachDetails.images.map((image,index) =>
                 <Carousel.Item>
-                    <img className="carousel-image" src={`data:image/jpeg;base64,${image.data}`}/>
+                    <div className="bg-dark d-flex justify-content-center">
+                        <img key={index} className="carousel-image" src={`data:image/jpeg;base64,${image.data}`}/>
+                    </div>
                 </Carousel.Item>
                 )}
             </Carousel>

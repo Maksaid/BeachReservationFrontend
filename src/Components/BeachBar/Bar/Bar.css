@@ -29,3 +29,10 @@
     width: 0px;
     transform: translate(-100%);
 }
+
+@media (max-width: 767px) {
+    .visible{
+        width: 100%; /* Full width on mobile devices */
+        z-index: 3;
+    }
+}

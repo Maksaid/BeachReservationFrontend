@@ -154,7 +154,7 @@ const CreateBeach = () => {
 
 
     return (
-        <div className="main">
+        <div className="main" style={{paddingTop:"10.5vh"}}>
             <h1>Create your beach Here</h1>
             <label>Name:</label>
             <input onChange={e => setBeachName(e.target.value)} value={beachName}/>
@@ -168,8 +168,9 @@ const CreateBeach = () => {
             </div>
             <BeachConfiguration currRows={currRows} currColumns={currColumns} currIndexes={currIndexes}/>
 
-            <label>Add BackgroundImage</label>
-            <form>
+
+            <form className="mt-5">
+                <label >Add BackgroundImage</label>
                 <input type="file" name="my_image" multiple onChange={handleImage}/>
                 {imageURL && <img src={imageURL} alt="Uploaded" style={{aspectRatio: 4 / 3, width: 100}}/>}
             </form>

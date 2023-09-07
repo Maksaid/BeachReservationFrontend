@@ -11,6 +11,7 @@ import './Components/AuthForms/Form.css'
 import CreateBeach from "./Components/CreateBeach/CreateBeach";
 import {ToastContainer, toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Profile from "./Components/Profile/Profile";
 
 
 function App() {
@@ -53,22 +54,23 @@ function App() {
     return (
         <Router>
             <div className="app">
-                <div style={{height:"9vh"}}>
                 <NavBarComponent handleLogin={setLoggedIn} handleLoginClick={handleLoginClick}
                                  handleSignupClick={handleSignupClick} isLoggedIn={isLoggedIn}
                                  handleProfileClick={handleProfileClick} handleLogoutClick={handleLogoutClick}
                                  toggleBeachBar={toggleBeachBar}
                                  isBeachBarToggled={isBeachBarToggled}/>
-                </div>
                 <div className="app-container">
                     <Switch>
                         <Route exact path="/">
-                                <Bar visible={isBeachBarToggled?"visible":"invisible"} currentBeach={currentBeachId}
-                                     handleBeachClick={setNewCurrentBeachId}/>
+                            <Bar visible={isBeachBarToggled ? "visible" : "invisible"} currentBeach={currentBeachId}
+                                 handleBeachClick={setNewCurrentBeachId}/>
                             <BeachDetails className="beach-details" beachId={currentBeachId} isLoggedIn={{isLoggedIn}}/>
                         </Route>
                         <Route path="/create">
                             <CreateBeach/>
+                        </Route>
+                        <Route path="/profile">
+                            <Profile />
                         </Route>
 
                     </Switch>

@@ -1,9 +1,7 @@
 .umbr-container{
 
     flex-wrap: wrap;
-
     height: inherit;
-
     /*min-width: 600px;
     max-width: 700px;*/
     width: 100%;
@@ -35,6 +33,7 @@
     padding: 100px 10px 10px;
     margin: 10px 20px 20px;
     min-width: 10%;
+    min-height: 120px;
     max-width: 90%;
     background-size: 100%;
     background-repeat: no-repeat;
