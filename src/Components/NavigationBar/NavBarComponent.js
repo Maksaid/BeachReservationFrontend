@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import {Navbar, Container, Nav, Offcanvas, Dropdown, ButtonGroup, DropdownButton} from "react-bootstrap";
@@ -15,6 +15,7 @@ const NavBarComponent = ({
                              toggleBeachBar,
                              isBeachBarToggled
                          }) => {
+    const [offcanvasOpen, setOffcanvasOpen] = useState(false);
 
     return (
         <Navbar bg="dark" data-bs-theme="dark" className="bg-body-tertiary"  fixed="top" expand="md" >
@@ -36,16 +37,16 @@ const NavBarComponent = ({
                         <IconUmbrellaBeach className="m-1 float-start" variant="primary" size="lg"/>
                     </Navbar.Brand>
                 </Link>
-                <Navbar.Toggle className="ml-auto m-1 justify-content-end" aria-controls="basic-navbar-nav"/>
+                <Navbar.Toggle className="ml-auto m-1 justify-content-end" aria-controls="basic-navbar-nav" onChange={()=>setOffcanvasOpen(true)}/>
             </Container>
 
             <Container fluid={"md"} className="justify-content-end">
                 <div className="d-flex justify-content-end align-items-center">
                     <Navbar.Offcanvas id="basic-navbar-nav" aria-labelledby={`offcanvasNavbarLabel-expand-md`}
-                                      placement="end" restoreFocus={false}>
-                        <Offcanvas.Header closeButton>
+                                      placement="end" >
+                        <Offcanvas.Header closeButton onClick={() => setOffcanvasOpen(false)}>
                             <Offcanvas.Title id={`offcanvasNavbarLabel-expand`}>
-                                Offcanvas
+                                {offcanvasOpen}
                             </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
@@ -94,7 +95,6 @@ const NavBarComponent = ({
                                 )}
                             </Nav>
                         </Offcanvas.Body>
-
                     </Navbar.Offcanvas>
                 </div>
             </Container>

@@ -22,8 +22,9 @@
 }
 
 .carousel-size{
-    width: 80%;
+    width: 60%;
     height: inherit;
+    z-index: 0;
 }
 
 .carousel-image{
